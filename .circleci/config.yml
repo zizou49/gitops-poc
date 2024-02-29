@@ -1,17 +1,13 @@
 version: 2.1
 
 jobs:
-  noop:
+  issue_comment:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - run: echo "noop"
+      - run: echo "issue has comment"
 
 workflows:
-  noop:
+  issue_comment:
     jobs:
-      - noop:
-          filters:
-            # ignore any commit on any branch by default
-            branches:
-              ignore: /.*/
+      - issue_comment
